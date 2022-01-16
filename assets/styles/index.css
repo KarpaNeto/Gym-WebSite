@@ -1,0 +1,454 @@
+/* Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Cores */
+
+:root {
+    --azul: rgba(8, 134, 245, .7);
+    --color-dark: rgba(17, 17, 17);
+    --color-light: rgba(255, 255, 255);
+    --color-gray: rgb(136, 136, 136);
+}
+
+/* Botão geral */
+
+.button {
+    display: block;
+    font-size: 1rem;
+    padding: 0.5rem 2.5rem;
+    color: var(--color-light);
+    border: 1px solid white;
+    transition: all 0.5s ease;
+}
+
+.button:hover {
+    background-color: var(--azul);
+    transition: all 0.5s ease;
+}
+
+.button-dark {
+    display: inline-block;
+    font-size: 1rem;
+    padding: 0.5rem 2.5rem;
+    color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+    transition: all 0.5s ease;
+}
+
+.button-dark:hover {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    transition: all 0.5s ease;
+}
+
+/* Cabeçalho */
+
+header {
+    height: 100px;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.nav {
+    max-width: 80%;
+    height: 100%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {}
+
+.nav-logo img {
+    width: 80px;
+    height: 80px;
+}
+
+.nav-list {
+    max-width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-list li a {
+    text-transform: uppercase;
+    color: var(--color-light);
+    font-size: clamp(0.5rem, 1vw, 1.5rem);
+    font-weight: 700;
+    display: block;
+    padding-inline: 0.3rem;
+    margin-inline: 0.2rem;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-list li a:hover,
+.nav-list .active a {
+    border-bottom: 3px solid var(--azul);
+    color: var(--color-light);
+}
+
+/* Banner */
+
+.banner {
+    height: calc(100vh - 100px);
+    background-image: url("https://image.freepik.com/fotos-gratis/pesos-de-exercicios-dumbbell-de-ferro-com-placas-extra_1423-223.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.banner .slider {
+    width: 1000vw;
+    height: 100%;
+}
+
+.banner .slide {
+    width: 100vw;
+    height: 100%;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.banner .slide-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.banner .slide-info h1 {
+    text-transform: uppercase;
+    color: var(--color-light);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.banner .slide-info h1 span {
+    color: var(--azul);
+}
+
+.banner .slide-info h2 {
+    color: var(--color-light);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.banner .slide-info .button {
+    margin-top: 2rem;
+}
+
+.banner .slider-area-circle {
+    position: absolute;
+    width: 100vw;
+    height: clamp(0.4rem, 3vh, 0.8rem);
+    bottom: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .slider-area-circle .slide-circle {
+    height: 100%;
+    margin-inline: 0.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.banner .slider-area-circle .slide-circle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.banner .slide-circle.active {
+    background-color: var(--azul);
+}
+
+/* Section DEFAULT */
+.default {
+    padding: 3rem 0;
+    margin-inline: auto;
+}
+
+.default .section-body {
+    max-width: 80%;
+    margin-inline: auto;
+    margin-top: 1rem;
+}
+
+.default .section-title,
+.default .section-desc {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.default .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.default .section-desc {
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Section Default Set Color */
+
+/* Light Section */
+
+.default.light {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+.default.light .section-title {
+    color: var(--color-dark);
+}
+
+.default.light .section-desc {
+    color: var(--color-gray);
+}
+
+/* Dark Section */
+
+.default.dark {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.default.dark .section-title {
+    color: var(--color-light);
+}
+
+.default.dark .section-desc {
+    color: var(--color-gray);
+}
+
+/*========== CONTEÚDO =======*/
+
+/* ====== About ======= */
+
+.section-about {
+    display: flex;
+}
+
+.about-left {
+    flex: 1;
+    margin-right: 1rem;
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.about-left p {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-weight: 400;
+}
+
+.about-left .button-dark {
+    margin-top: 1rem;
+    width: fit-content;
+}
+
+.about-right {
+    flex: 1;
+    max-width: 500px;
+    align-self: center;
+}
+
+.about-right img {
+    width: 100%;
+    box-shadow: 3px 4px 15px #333;
+}
+
+/*============== SERVICES ============ */
+
+.section-services {
+    display: flex;
+}
+
+.section-services .service {
+    padding: 0.5rem;
+    text-align: center;
+    flex: 1;
+    border-right: 1px solid var(--color-gray);
+}
+
+.section-services .service:first-child {
+    border-left: 1px solid var(--color-gray);
+}
+
+.service img {
+    width: 50%;
+}
+
+.section-services .service h4 {
+    text-transform: uppercase;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-light);
+}
+
+.section-services .service h5 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-gray);
+}
+
+/* ======PROJECTS======= */
+
+.section-projects {
+    text-align: center;
+}
+
+.section-projects .project-filter {
+    display: inline-block;
+}
+
+.section-projects .project-filter ul li {
+    display: inline-block;
+    margin-inline: .5rem;
+}
+
+.section-projects .button {
+    color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+}
+
+.section-projects .button:hover {
+    color: var(--color-light);
+}
+
+.section-projects .button.active {
+    color: var(--color-light);
+    background-color: var(--azul);
+}
+
+
+
+/* Projects Boxes */
+
+.section-projects .container-box {
+    width: 100vw;
+    max-width: 100%;
+    margin-top: 1rem;
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container-box .box {
+    width: 280px;
+    margin: .5rem;
+    cursor: pointer;
+}
+
+.container-box .box .box-wrapper {
+    width: 280px;
+    height: 220px;
+}
+
+.section-projects .box-wrapper img {
+    width: inherit;
+    height: inherit;
+}
+
+.section-projects .box-wrapper .box-info {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: inherit;
+    height: inherit;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-light);
+}
+
+.section-projects .box-wrapper .box-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.box-info p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.box:hover .box-info {
+    display: flex;
+}
+
+
+
+/* SECTION TEAM */
+
+.bg {
+    background-image: url('https://image.freepik.com/fotos-gratis/borrao-abstrata-e-equipamento-de-fitness-desfocado-no-interior-do-ginasio-fundo-desfocado-foto_74190-9963.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0;
+}
+
+.section-team-area {
+    padding: 3rem 0;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.section-team {
+    overflow: hidden;
+}
+
+.section-team .slider {
+    width: 1000vw;
+    height: 100%;
+}
+
+.section-team .slide {
+    width: 20vw;
+    height: 100%;
+    display: inline-block;
+    margin-inline: 1rem;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.section-team .slide-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+
+}
